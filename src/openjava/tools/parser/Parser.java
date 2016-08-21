@@ -7584,40 +7584,6 @@ public class Parser implements ParserConstants {
     catch(LookaheadSuccess ls) { return true; }
   }
 
-  private boolean jj_3R_415() {
-    Token xsp;
-    xsp = jj_scanpos;
-    if (jj_scan_token(105)) {
-    jj_scanpos = xsp;
-    if (jj_scan_token(106)) {
-    jj_scanpos = xsp;
-    if (jj_scan_token(110)) return true;
-    }
-    }
-    if (jj_3R_397()) return true;
-    return false;
-  }
-
-  private boolean jj_3R_411() {
-    if (jj_3R_414()) return true;
-    return false;
-  }
-
-  private boolean jj_3_80() {
-    if (jj_3R_115()) return true;
-    return false;
-  }
-
-  private boolean jj_3R_410() {
-    if (jj_3R_413()) return true;
-    return false;
-  }
-
-  private boolean jj_3R_244() {
-    if (jj_3R_101()) return true;
-    return false;
-  }
-
   private boolean jj_3R_409() {
     Token xsp;
     xsp = jj_scanpos;
@@ -7647,16 +7613,6 @@ public class Parser implements ParserConstants {
     return false;
   }
 
-  private boolean jj_3_13() {
-    Token xsp;
-    while (true) {
-      xsp = jj_scanpos;
-      if (jj_3R_109()) { jj_scanpos = xsp; break; }
-    }
-    if (jj_scan_token(ENUM)) return true;
-    return false;
-  }
-
   private boolean jj_3_79() {
     Token xsp;
     xsp = jj_scanpos;
@@ -7668,6 +7624,16 @@ public class Parser implements ParserConstants {
     }
     }
     if (jj_3R_382()) return true;
+    return false;
+  }
+
+  private boolean jj_3_13() {
+    Token xsp;
+    while (true) {
+      xsp = jj_scanpos;
+      if (jj_3R_109()) { jj_scanpos = xsp; break; }
+    }
+    if (jj_scan_token(ENUM)) return true;
     return false;
   }
 
@@ -11766,6 +11732,40 @@ public class Parser implements ParserConstants {
     if (jj_scan_token(104)) return true;
     }
     if (jj_3R_393()) return true;
+    return false;
+  }
+
+  private boolean jj_3R_415() {
+    Token xsp;
+    xsp = jj_scanpos;
+    if (jj_scan_token(105)) {
+    jj_scanpos = xsp;
+    if (jj_scan_token(106)) {
+    jj_scanpos = xsp;
+    if (jj_scan_token(110)) return true;
+    }
+    }
+    if (jj_3R_397()) return true;
+    return false;
+  }
+
+  private boolean jj_3R_411() {
+    if (jj_3R_414()) return true;
+    return false;
+  }
+
+  private boolean jj_3_80() {
+    if (jj_3R_115()) return true;
+    return false;
+  }
+
+  private boolean jj_3R_410() {
+    if (jj_3R_413()) return true;
+    return false;
+  }
+
+  private boolean jj_3R_244() {
+    if (jj_3R_101()) return true;
     return false;
   }
 

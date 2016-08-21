@@ -11,6 +11,11 @@
  * @see openjava.ptree.ParseTreeObject
  * @version 1.0 last updated: Jun 11, 1997
  * @author  Michiaki Tatsubori
+ * 
+ * 
+ * Aug 20, 2016
+ * Fix a fault that overlooking array of VariableDeclarator
+ * 
  */
 package openjava.ptree;
 
@@ -374,7 +379,22 @@ public abstract class NonLeaf extends ParseTreeObject implements ParseTree {
 		if (contents == null)
 			return;
 		for (int i = 0; i < contents.length; ++i) {
-			if (contents[i] instanceof ParseTree) {
+			
+			// Haoyuan found the fault that this method only looks for
+			// ParseTree objects.
+			// And overlooking array of VariableDeclarator
+			// Aug 20, 2016
+			
+			if (contents[i] instanceof VariableDeclarator[])
+			{
+				VariableDeclarator[] vds = (VariableDeclarator[]) contents[i];
+				for (VariableDeclarator vd : vds)
+				{
+					ParseTree ptree = (ParseTree) vd;
+					ptree.accept(visitor);
+				}
+			}
+			else if (contents[i] instanceof ParseTree) {
 				ParseTree ptree = (ParseTree) contents[i];
 				ptree.accept(visitor);
 			}
